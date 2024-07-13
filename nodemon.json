@@ -1,0 +1,14 @@
+{
+  "watch": ["./src"],
+  "ext": "js",
+  "ignore": ["node_modules"],
+  "delay": "500",
+  "exec": "node --inspect ./",
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": "3000"
+  },
+  "verbose": false,
+  "quiet": true,
+  "legacy-watch": false
+}

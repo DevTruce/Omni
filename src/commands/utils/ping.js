@@ -3,6 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 //////// Imports/Variables
 const { SlashCommandBuilder } = require("discord.js");
+const logger = require("../../utils/logger.js");
 
 ///////////////////////////////////////////////////////////////////////////////
 //////// Speak as Bot
@@ -13,6 +14,18 @@ module.exports = {
     .setName("ping")
     .setDescription("replies with pong"),
   async execute(interaction) {
-    await interaction.reply("Pong!");
+    logger("commandUsed", "", interaction, "");
+    try {
+      await interaction.reply("Pong!");
+    } catch (err) {
+      // Log detailed error information for debugging
+      logger("error", `Failed to send pong`, "", err);
+
+      // Inform the user about the error
+      await interaction.reply({
+        content: `Failed to send pong, Please try again later. \n\n${err}`,
+        ephemeral: true,
+      });
+    }
   },
 };
