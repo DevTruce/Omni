@@ -1,0 +1,7 @@
+# Defaults
+**/node_modules/
+**/.vscode/
+**/.DS_Store
+
+# Config 
+.env
