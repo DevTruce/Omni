@@ -4,8 +4,11 @@
 //////// Imports & Variables
 const { SlashCommandBuilder } = require("discord.js");
 const logger = require("../../utils/logger.js");
+const ephmeralResponse = require("../../helpers/ephemeralResponse.js");
 
 const config = require("../../config");
+
+const errorMessage = `There was an error while trying to use the facts command`;
 
 ///////////////////////////////////////////////////////////////////////////////
 //////// Fetch a random fact from ninjas fact api
@@ -20,7 +23,7 @@ module.exports = {
     try {
       // Make api request
       logger("request", "Fetching random fact from ninjas facts api", "", "");
-      const response = await fetch(`${config.NINJAS_API_URL}/fcts`, {
+      const response = await fetch(`${config.NINJAS_API_URL}/facts`, {
         method: "GET",
         contentType: "application/json",
         headers: { "X-Api-Key": config.NINJAS_API_KEY },
@@ -45,13 +48,10 @@ module.exports = {
       await interaction.reply(fact);
     } catch (err) {
       // Log detailed error information for debugging
-      logger("error", `Fetching random fact from ninjas facts api`, "", err);
+      logger("error", errorMessage, "", err);
 
       // Inform the user about the error
-      await interaction.reply({
-        content: `Failed to fetch fact, Please try again later. \n\n${err}`,
-        ephemeral: true,
-      });
+      await ephmeralResponse(interaction, `${errorMessage} \n\n${err}`);
     }
   },
 };

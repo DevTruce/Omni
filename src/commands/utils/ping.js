@@ -4,6 +4,9 @@
 //////// Imports/Variables
 const { SlashCommandBuilder } = require("discord.js");
 const logger = require("../../utils/logger.js");
+const ephmeralResponse = require("../../helpers/ephemeralResponse.js");
+
+const errorMessage = `There was an error while trying to use the ping command`;
 
 ///////////////////////////////////////////////////////////////////////////////
 //////// Speak as Bot
@@ -19,13 +22,10 @@ module.exports = {
       await interaction.reply("Pong!");
     } catch (err) {
       // Log detailed error information for debugging
-      logger("error", `Failed to send pong`, "", err);
+      logger("error", errorMessage, "", err);
 
       // Inform the user about the error
-      await interaction.reply({
-        content: `Failed to send pong, Please try again later. \n\n${err}`,
-        ephemeral: true,
-      });
+      await ephmeralResponse(interaction, `${errorMessage} \n\n${err}`);
     }
   },
 };
