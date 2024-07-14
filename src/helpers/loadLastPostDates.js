@@ -31,7 +31,7 @@ async function loadLastPostDates(lastPostDates) {
   //// Read the file and parse its content and return it as lastPostDates
   try {
     const data = await fs.readFile(LAST_POST_DATES_FILE, "utf8");
-    logger("info", "Last post dates for RSS feeds updated successfully");
+    logger("info", "Last post dates for RSS feeds read successfully");
     return (lastPostDates = JSON.parse(data)); // needed in checkRSSFeed logic
   } catch (err) {
     logger("error", "Error loading lastPostDates", "", err);
