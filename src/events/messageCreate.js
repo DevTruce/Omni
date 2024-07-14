@@ -14,6 +14,7 @@ module.exports = {
   async execute(message) {
     if (message.author.bot) return; // ignore bot messages
 
+    // User sent a message that contains only an image
     if (!message.content) {
       logger(
         "discordAction",
@@ -21,6 +22,7 @@ module.exports = {
       );
     }
 
+    // User sent a message that contains text
     if (message.content) {
       logger(
         "discordAction",
