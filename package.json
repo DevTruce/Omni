@@ -12,7 +12,8 @@
   "dependencies": {
     "discord.js": "^14.15.3",
     "dotenv": "^10.0.0",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "rss-parser": "^3.13.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
