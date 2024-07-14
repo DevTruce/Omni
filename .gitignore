@@ -5,3 +5,6 @@
 
 # Config 
 .env
+
+# Ignore all JSON files in the json folder
+json/*.json

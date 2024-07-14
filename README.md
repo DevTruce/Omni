@@ -45,14 +45,24 @@
 
 - Create a .env file located within the project root & provide neccessary details
 
-  ```sh
-  OWNER_ID=0
-
+  ```.env
+  ###################################
+  #### Discord Application Setup ####
   BOT_TOKEN=""
-  BOT_APP_ID=0
-  GUILD_ID=0
-  TIMEOUT_INTERVAL_MS=5000
+  BOT_APP_ID=""
+  GUILD_ID=""
 
+  ##########################
+  #### Authorized Users ####
+  OWNER_ID=""
+
+  #########################
+  #### API Information ####
   NINJAS_API_URL="https://api.api-ninjas.com/v1/"
   NINJAS_API_KEY=""
+
+  ###################################
+  #### RSS Feed Discord Channels ####
+  RSS_GITHUB_CHANNEL_ID=""
+  RSS_NEWS_CHANNEL_ID=""
   ```
