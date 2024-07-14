@@ -41,7 +41,7 @@ module.exports = {
 
       // Storing the response
       const data = await response.json();
-      const dadJoke = data[0]?.dadJoke;
+      const dadJoke = data[0]?.joke;
 
       // Check if there indeed was a dad joke returned
       if (!dadJoke) {
