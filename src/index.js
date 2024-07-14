@@ -5,7 +5,7 @@
 const fs = require("node:fs");
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 
-const config = require("./config");
+const config = require("./config.js");
 const { loadCommands } = require("./utils/loadCommands");
 const { loadEventListeners } = require("./utils/loadEventListeners");
 
