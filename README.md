@@ -43,7 +43,7 @@
 
 ### Configuration
 
-- Create a folder names "json" within the project root & leave it empty
+- Create a folder named "json" within the project root & leave it empty
 - Create a .env file located within the project root & provide neccessary details
 
   ```.env
