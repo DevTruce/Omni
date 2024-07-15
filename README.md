@@ -65,5 +65,9 @@
   ###################################
   #### RSS Feed Discord Channels ####
   RSS_GITHUB_CHANNEL_ID=""
-  RSS_NEWS_CHANNEL_ID=""
+  RSS_FREECODECAMP_CHANNEL_ID=""
+  RSS_DEVTO_CHANNEL_ID=""
+  RSS_CSS_TRICKS_CHANNEL_ID=""
+  RSS_SMASHING_MAG_CHANNEL_ID=""
+  RSS_SITEPOINT_CHANNEL_ID=""
   ```
