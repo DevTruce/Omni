@@ -39,27 +39,27 @@ const config = {
     // freeCodeCamp
     {
       RSS_URL: "https://www.freecodecamp.org/news/rss/",
-      CHANNEL_ID: process.env.RSS_NEWS_CHANNEL_ID,
+      CHANNEL_ID: process.env.RSS_FREECODECAMP_CHANNEL_ID,
     },
     // Dev.to
     {
       RSS_URL: "https://dev.to/feed",
-      CHANNEL_ID: process.env.RSS_NEWS_CHANNEL_ID,
+      CHANNEL_ID: process.env.RSS_DEVTO_CHANNEL_ID,
     },
     // CSS Tricks
     {
       RSS_URL: "https://css-tricks.com/feed/",
-      CHANNEL_ID: process.env.RSS_NEWS_CHANNEL_ID,
+      CHANNEL_ID: process.env.RSS_CSS_TRICKS_CHANNEL_ID,
     },
     // Smashing Magazine
     {
       RSS_URL: "https://www.smashingmagazine.com/feed/",
-      CHANNEL_ID: process.env.RSS_NEWS_CHANNEL_ID,
+      CHANNEL_ID: process.env.RSS_SMASHING_MAG_CHANNEL_ID,
     },
     // SitePoint
     {
       RSS_URL: "https://www.sitepoint.com/feed/",
-      CHANNEL_ID: process.env.RSS_NEWS_CHANNEL_ID,
+      CHANNEL_ID: process.env.RSS_SITEPOINT_CHANNEL_ID,
     },
   ],
 };
