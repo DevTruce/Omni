@@ -34,7 +34,7 @@ module.exports = {
     // Execute the command
     try {
       await command.execute(interaction);
-    } catch (error) {
+    } catch (err) {
       // Log detailed error information for debugging
       logger("error", errorMessage, "", err);
 
