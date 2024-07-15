@@ -38,32 +38,32 @@ async function checkRSSFeeds(client) {
         const latestPost = feedData.items[0];
         const postDate = new Date(latestPost.isoDate);
 
-        // Initialize last post date if not already set for this RSS URL
-        if (!lastPostDates[RSS_URL]) {
-          lastPostDates[RSS_URL] = null;
+        // Check if this post has already been posted
+        if (
+          lastPostDates[RSS_URL] &&
+          postDate <= new Date(lastPostDates[RSS_URL])
+        ) {
+          continue; // Skip if already posted
         }
 
-        // Check if this post is newer than the last processed post for this RSS URL
-        if (!lastPostDates[RSS_URL] || postDate > lastPostDates[RSS_URL]) {
-          // Update the last post date for this RSS URL to current post's date
-          lastPostDates[RSS_URL] = postDate;
+        // Update the last post date for this RSS URL
+        lastPostDates[RSS_URL] = postDate;
 
-          // Fetch the Discord channel where the message will be sent
-          const channel = await client.channels.fetch(CHANNEL_ID);
+        // Fetch the Discord channel where the message will be sent
+        const channel = await client.channels.fetch(CHANNEL_ID);
 
-          // Cut the content snippet to fit within Discord's limits (max 4096 characters)
-          let contentSnippet = latestPost.contentSnippet.slice(0, 4096);
+        // Cut the content snippet to fit within Discord's limits (max 4096 characters)
+        let contentSnippet = latestPost.contentSnippet.slice(0, 4096);
 
-          // Create an embed message with the post details
-          const embed = new EmbedBuilder()
-            .setTitle(latestPost.title)
-            .setURL(latestPost.link)
-            .setDescription(contentSnippet) // Use the cut content snippet
-            .setTimestamp(postDate);
+        // Create an embed message with the post details
+        const embed = new EmbedBuilder()
+          .setTitle(latestPost.title)
+          .setURL(latestPost.link)
+          .setDescription(contentSnippet) // Use the cut content snippet
+          .setTimestamp(postDate);
 
-          // Send the embed message into the discord channel
-          await channel.send({ embeds: [embed] });
-        }
+        // Send the embed message into the discord channel
+        await channel.send({ embeds: [embed] });
       } catch (err) {
         logger("error", `${errorMessage} ${RSS_URL}`, "", err);
       }
