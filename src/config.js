@@ -8,8 +8,7 @@ require("dotenv").config();
 //////// Config File Information Pulled from .env File
 const config = {
   TIMEOUT_INTERVAL: 5000, // 5 seconds
-  // RSS_TIMEOUT_INTERVAL: 300000, // 5 minutes
-  RSS_TIMEOUT_INTERVAL: 5000, // for testing
+  RSS_TIMEOUT_INTERVAL: 300000, // 5 minutes
 
   ///////////////////////////////////////
   ////  Discord Application Setup  /////
