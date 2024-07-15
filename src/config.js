@@ -19,6 +19,7 @@ const config = {
   /////////////////////////////
   ////  Authorized Users  /////
   OWNER_ID: process.env.OWNER_ID || "",
+  ADMIN_IDS: process.env.ADMIN_IDS || [],
 
   /////////////////////////////
   ////  API Information  /////

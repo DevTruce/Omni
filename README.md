@@ -56,6 +56,7 @@
   ##########################
   #### Authorized Users ####
   OWNER_ID=""
+  ADMIN_IDS=[]
 
   #########################
   #### API Information ####
